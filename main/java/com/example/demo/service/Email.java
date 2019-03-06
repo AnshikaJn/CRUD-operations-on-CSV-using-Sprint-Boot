@@ -1,0 +1,43 @@
+package com.example.demo.service;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+
+//@Entity
+//@EntityListeners(AuditingEntityListener.class)
+public class Email {
+    private String to;
+    private String body;
+
+    public Email() {
+    }
+
+    public Email(String to, String body) {
+        this.to = to;
+        this.body = body;
+    }
+
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Email{to=%s, body=%s}", getTo(), getBody());
+    }
+}
+
